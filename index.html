@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kaho Matsushita Portfolio</title>
+    <meta
+      name="description"
+      content="Webデザイナーを目指す、松下果穂のポートフォリオです。"
+    />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- favicon/webclipicon -->
+    <link rel="shortcut icon" href="img/favicon.png" />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400&amp;family=Noto+Sans+JP:wght@100;400&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="fadeout">
+    <header id="header">
+      <a class="logo" href="index.html">
+        <img src="img/logo_transparent.png" alt="Logo" />
+      </a>
+      <nav class="navi">
+        <div class="hamburger-menu">
+          <div class="openbtn"><span></span><span></span><span></span></div>
+        </div>
+        <ul>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="#work">WORK</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <nav id="g-nav">
+        <div>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="#work">WORK</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </div>
+      </nav>
+    </header>
+
+    <div id="mainvisual">
+      <img src="img/mainvisual1.jpg" alt="私の写真" />
+      <p class="name">Kaho<br />Matsushita</p>
+      <p class="text">
+        つくるものを通して、人とつながり、<br />
+        思いを形にするお手伝いをします。
+      </p>
+    </div>
+
+    <main class="wrapper">
+      <section id="skill">
+        <h2 class="section-title">SKILL</h2>
+        <div class="skill-container">
+          <div class="skill-item design">
+            <h3>
+              <span class="ja">デザイン</span>
+              <span class="en">DESIGN</span>
+            </h3>
+            <div class="sp-container">
+              <img
+                src="img/えんぴつ.svg"
+                alt="デザインを表す鉛筆の画像"
+                width="150"
+                height="150"
+              />
+              <div class="text-part">
+                <p class="skill-text">
+                  人の使うものであることを常に意識して、使う人が迷わない、目的を達成できるデザインを心がけています。ウェブサイトやアプリ、ロゴなど、幅広いジャンルに触れながらデザインの基本原則を学んでいます。
+                </p>
+                <p class="tool">使用ツール</p>
+                <p class="tool-name">illustrator/Photoshop/figma</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <h3>
+              <span class="ja">コーディング</span>
+              <span class="en">CODING</span>
+            </h3>
+            <div class="sp-container">
+              <img
+                src="img/ノートパソコン.png"
+                alt="コーディングを表すノートパソコンの画像"
+                width="150"
+                height="150"
+              />
+              <div class="text-part">
+                <p class="skill-text">
+                  HTML/CSS/jQueryでレスポンシブなウェブサイトが構築できます。複雑なコードを避け、見やすくメンテナンスしやすいコードを書くように心がけています。デザインの意図を理解し、動きや効果を適切に使用するようにしています。
+                </p>
+                <p class="tool">使用ツール</p>
+                <p class="tool-name">HTML/CSS/jQuery</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="work">
+        <h2 class="section-title">WORK</h2>
+        <div class="work-container">
+          <a href="work1.html"
+            ><img
+              src="img/コーヒーショップ.jpg"
+              alt="コーヒーショップのウェブサイトの画像"
+          /></a>
+          <a href="work2.html"
+            ><img src="img/英会話教室LP.jpg" alt="英会話教室のLPの画像"
+          /></a>
+          <a href="work3.html"
+            ><img src="img/ブログ.jpg" alt="ブログの画像"
+          /></a>
+          <a href="work4.html"
+            ><img src="img/料理サイト.jpg" alt="料理サイトの画像"
+          /></a>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2 class="section-title">CONTACT</h2>
+        <div class="email">
+          <span
+            ><a href="mailto:kaho.fuku117@gmail.com"
+              >kaho.fuku117@gmail.com</a
+            ></span
+          >
+          <div class="arrow">
+            <img src="img/Arrow 1.svg" alt="矢印のアイコン" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="wrapper footer-container">
+        <a class="logo" href="index.html">
+          <img src="img/logo_transparent.png" alt="Logo" />
+        </a>
+        <ul>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="#work">WORK</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </div>
+      <small class="copyright">
+        All Rights Reserved 2024 ©︎ Kaho Matsushita
+      </small>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>

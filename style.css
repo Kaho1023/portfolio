@@ -1,0 +1,655 @@
+@charset "UTF-8";
+
+/* ------------------------------ */
+/* リセットCSS  */
+/* ------------------------------ */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------------ */
+/* 全体共通のスタイル */
+/* ------------------------------ */
+
+html {
+  font-size: 100%;
+}
+
+body {
+  color: #333;
+  background-color: #f5f5f5;
+  border: solid 5px red;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* 背景カラー */
+  z-index: 9999; /* 一番手前に */
+  pointer-events: none; /* 他の要素にアクセス可能にするためにポインターイベントは無効に */
+  opacity: 0; /* 初期値 : 透過状態 */
+  -webkit-transition: opacity 0.8s ease; /* アニメーション時間は 0.8秒 */
+  transition: opacity 0.8s ease;
+}
+
+body.fadeout::after {
+  opacity: 1;
+}
+
+.wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 50px;
+  display: inline-block;
+}
+.section-title {
+  padding-top: 96px;
+  font-size: 3rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 200;
+  text-align: center;
+  position: relative;
+  margin-bottom: 96px;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  top: 65%;
+  left: 43%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #f5f0e6;
+  z-index: -1;
+  filter: blur(2px);
+}
+
+/* ------------------------------ */
+/* Header */
+/* ------------------------------ */
+header {
+  padding: 24px 48px 0px 24px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f5f0e6;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+}
+
+#header ul {
+  font-family: "Lato", sans-serif;
+  font-size: 0.875rem;
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  height: 100%;
+}
+
+#header li {
+  position: relative;
+}
+
+#header li a::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #333;
+  transition: width 0.2s ease-in-out;
+}
+
+#header li a:hover::before {
+  width: 100%;
+}
+
+#g-nav {
+  display: none;
+}
+/* ------------------------------ */
+/* hamburger menu */
+/* ------------------------------ */
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.openbtn {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  border-radius: 2px;
+  z-index: 30;
+}
+
+.openbtn span {
+  display: inline-block;
+  transition: all 0.4s;
+  position: absolute;
+  left: 14px;
+  height: 2px;
+  border-radius: 2px;
+  background: #333;
+  width: 45%;
+}
+.openbtn span:nth-of-type(1) {
+  top: 15px;
+}
+
+.openbtn span:nth-of-type(2) {
+  top: 23px;
+}
+
+.openbtn span:nth-of-type(3) {
+  top: 31px;
+}
+
+.openbtn.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3) {
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+
+/* ------------------------------ */
+/* Mainvisual */
+/* ------------------------------ */
+
+#mainvisual {
+  padding-top: 80px;
+  position: relative;
+}
+
+#mainvisual .name,
+#mainvisual .text {
+  position: absolute;
+}
+
+#mainvisual .name {
+  font-family: Helvetica, sans-serif;
+  color: #f9cdae;
+  opacity: 55%;
+  font-size: 6rem;
+  top: 50%;
+  left: 5%;
+}
+
+#mainvisual .text {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 48px;
+  letter-spacing: 0.1rem;
+  top: 30%;
+  right: 15%;
+  transform-origin: left top;
+  writing-mode: vertical-rl;
+}
+
+/* ------------------------------ */
+/* Skill */
+/* ------------------------------ */
+
+#skill .skill-container {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+#skill .skill-item {
+  width: 45%;
+  text-align: center;
+}
+#skill .ja {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+#skill .en {
+  margin-top: 8px;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 200;
+}
+
+#skill img {
+  margin-top: 48px;
+}
+#skill .skill-text {
+  font-size: 0.875rem;
+  margin-top: 64px;
+  text-align: left;
+  line-height: 26px;
+}
+
+#skill .tool {
+  font-size: 0.875rem;
+  margin-top: 16px;
+  text-align: left;
+  line-height: 26px;
+  width: 20%;
+  background-image: linear-gradient(transparent 70%, #f9cdae 0%);
+}
+
+#skill .design .tool {
+  margin-top: 20px;
+}
+
+#skill .tool-name {
+  text-align: left;
+}
+
+/* ------------------------------ */
+/* Work */
+/* ------------------------------ */
+
+#work .work-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#work .work-container a {
+  width: calc((100% - 40px) / 3);
+}
+
+#work .work-container a :hover {
+  opacity: 0.4;
+}
+
+#work img {
+  border: solid 0.5px #999;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+/* ------------------------------ */
+/* Contact */
+/* ------------------------------ */
+#contact {
+  text-align: center;
+}
+
+#contact .email {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
+  padding: 24px 192px;
+  border: 1px solid #999;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  transition-duration: 0.4s;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#contact .email::after {
+  background: linear-gradient(-135deg, #fdd7bc, #9099b5);
+  opacity: 0.7;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  margin: auto;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding-top: 100%;
+  height: 0;
+  z-index: -1;
+  transform: translateY(-50%) scale(0.1);
+  transition: opacity 0.5s, transform 0s;
+  transition-delay: 0s, 0.4s;
+}
+
+#contact .email:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+  transition-delay: 0s;
+  transition: opacity 0.8s, transform 0.6s ease-in-out;
+}
+
+/* ------------------------------ */
+/* Footer */
+/* ------------------------------ */
+
+#footer {
+  margin-top: 128px;
+  background-color: #f5f0e6;
+}
+
+#footer .footer-container {
+  padding: 40px 0 160px 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+#footer ul {
+  font-family: "Lato", sans-serif;
+  font-size: 0.875rem;
+  display: flex;
+  gap: 80px;
+  align-items: center;
+}
+
+#footer .copyright {
+  text-align: center;
+  display: block;
+}
+/* ------------------------------ */
+/* About */
+/* ------------------------------ */
+#about {
+  padding-top: 80px;
+}
+
+#about .img {
+  width: 240px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#about .about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+#about .text {
+  width: 30%;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.875rem;
+  line-height: 26px;
+}
+
+#about .name {
+  padding-bottom: 16px;
+}
+
+#about .prev {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  margin-top: 52px;
+  padding-left: 25%;
+}
+
+#about .prev:hover {
+  opacity: 0.4;
+}
+
+/* ------------------------------ */
+/* Workpage */
+/* ------------------------------ */
+#workpage {
+  padding-top: 80px;
+}
+
+#workpage .work-text {
+  margin-top: 56px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.875rem;
+}
+
+#workpage .title {
+  font-weight: bold;
+}
+
+#workpage .title:hover {
+  opacity: 0.4;
+}
+
+#workpage .title img {
+  width: 0.875rem;
+}
+
+#workpage .content {
+  margin-top: 16px;
+  line-height: 26px;
+}
+
+#workpage .prev {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  margin-top: 52px;
+}
+
+#workpage .prev:hover {
+  opacity: 0.4;
+}
+
+/* ------------------------------ */
+/* workページ　デザイン用 */
+/* ------------------------------ */
+#workpage .design {
+  margin-top: 40px;
+}
+#workpage .pc-img {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+#workpage .pc-img img {
+  width: calc((100% - 10px) / 2);
+  height: auto;
+  margin-bottom: 10px;
+}
+
+#workpage .mobile-img {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+#workpage .mobile-img img {
+  width: 100%;
+  height: auto;
+}
+
+/* ------------------------------ */
+/* SP */
+/* ------------------------------ */
+
+@media screen and (max-width: 900px) {
+  .wrapper {
+    padding: 0 16px;
+  }
+  .section-title {
+    margin-bottom: 48px;
+  }
+  /* ------------------------------ */
+  /* Header */
+  /* ------------------------------ */
+
+  #header {
+    padding: 8px 48px 0 24px;
+  }
+
+  .hamburger-menu {
+    display: block;
+    z-index: 30;
+  }
+
+  #header ul {
+    display: none;
+  }
+
+  #g-nav {
+    display: block;
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position: fixed;
+    z-index: 20;
+    /*ナビのスタート位置と形状*/
+    top: -120%;
+    left: 0;
+    width: 100%;
+    height: 20vh; /*ナビの高さ*/
+    background: #feb7a1;
+    transition: all 0.6s;
+  }
+
+  /*アクティブクラスがついたら位置を0に*/
+  #g-nav.panelactive {
+    top: 0;
+  }
+
+  /*リストのレイアウト設定*/
+
+  #g-nav div {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #g-nav li {
+    list-style: none;
+    text-align: center;
+  }
+
+  #header li a::before {
+    width: initial;
+    background-color: transparent;
+    transition: none;
+  }
+
+  #g-nav li a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  /* ------------------------------ */
+  /* Mainvisual */
+  /* ------------------------------ */
+
+  #mainvisual {
+    padding-top: 60px;
+  }
+  #mainvisual .name {
+    font-size: 3rem;
+  }
+  #mainvisual .text {
+    top: 25%;
+    font-size: 0.875rem;
+    line-height: 32px;
+  }
+  /* ------------------------------ */
+  /* Skill */
+  /* ------------------------------ */
+  #skill .skill-container {
+    display: block;
+  }
+  #skill .skill-item {
+    width: 100%;
+  }
+  #skill .sp-container {
+    display: flex;
+    gap: 16px;
+  }
+  #skill .tool,
+  #skill .tool-name {
+    display: block;
+  }
+
+  .skill-item:nth-child(2) h3 {
+    margin-top: 56px;
+  }
+
+  #skill .skill-text {
+    margin-top: 48px;
+  }
+
+  /* ------------------------------ */
+  /* Work */
+  /* ------------------------------ */
+  #work .work-container a {
+    width: calc((100% - 20px) / 2);
+  }
+  /* ------------------------------ */
+  /* Contact */
+  /* ------------------------------ */
+  #contact .email {
+    font-size: 1.5rem;
+    padding: 16px 150px;
+  }
+
+  /* ------------------------------ */
+  /* Footer */
+  /* ------------------------------ */
+  #footer .footer-container {
+    padding: 40px 0 100px 0;
+  }
+}
